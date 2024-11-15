@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Action de teste
-        run: echo "$ {{ inputs.exemplo-input }}"
+        run: echo "${{ inputs.exemplo-input }}"
