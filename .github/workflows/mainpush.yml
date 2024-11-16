@@ -1,7 +1,9 @@
 name: Workflow evento
 on:
   push:
-    branches: ["main", "feature/*"]
+    #branches: ["main", "feature/*"]
+    tags:
+      - v*
 jobs:
   teste:
     runs-on: ubuntu-latest
