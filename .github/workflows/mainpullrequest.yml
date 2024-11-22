@@ -4,7 +4,19 @@ on:
     branches: ["main"]
 jobs:
   teste:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Action de teste
         run: echo "Action executada apenas em main e features"
+
+      - name: Alteração de card
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Adicionando um comentário sobre o PR'
+            })
