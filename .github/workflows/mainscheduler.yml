@@ -1,0 +1,12 @@
+name: Workflow evento
+on:
+    schedule:
+      - cron: "*/2 * * * *"
+      - cron: "0 12 1 * *"
+jobs:
+  teste:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: Action de teste
+        run: echo "Action executada apenas em main e features"
