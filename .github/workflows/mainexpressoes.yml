@@ -21,4 +21,4 @@ jobs:
       - name: Função Format
         run: "echo ${{ format('Formato String: {0} - Formato Number: {1} - Formato boolean: {2}', inputs.valor_string, inputs.valor_numerico, inputs.valor_boolean) }}"
       - name: Função json
-        run: echo ${{ toJson(github) }}
+        run: echo "${{ toJson(github) }}"
