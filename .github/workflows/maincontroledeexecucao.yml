@@ -25,4 +25,4 @@ jobs:
         run: ech "Execução em todos"
       - name: Envio de erros
         if: ${{ failure() }}
-        run: ech "Envio de erro"
+        run: echo "Envio de erro"
