@@ -7,5 +7,12 @@ jobs:
     name: Esse Job só executa na branch main
     runs-on: ubuntu-latest
     steps:
-        - name: Executando na main
-          run: echo "Executando na main"
+      - name: Executando na main
+        run: echo "Executando na main"
+  todos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execução em Feature
+        run: echo "Execução em Feature" 
+      - name: Execução em hotfix
+        run: echo "Execução em hotfix"
