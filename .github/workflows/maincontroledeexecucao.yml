@@ -7,5 +7,17 @@ jobs:
     name: Esse Job só executa na branch main
     runs-on: ubuntu-latest
     steps:
-        - name: Executando na main
-          run: echo "Executando na main"
+      - name: Executando na main
+        run: echo "Executando na main"
+  todos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execução em Feature
+        if: ${{ contains(github.ref,'refs/heads/feature') }}
+        run: echo "Execução em Feature" 
+      - name: Execução em hotfix
+        if: ${{ contains(github.ref,'refs/heads/hotfix') }}
+        run: echo "Execução em hotfix"
+      - name: Execução em main
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: echo "Execução em main"
