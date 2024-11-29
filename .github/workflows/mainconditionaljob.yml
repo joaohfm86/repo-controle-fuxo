@@ -1,0 +1,15 @@
+name: Workflow evento
+on:
+  push:
+jobs:
+  exemplo-fluxo-execucao-01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vai falhar
+        run: l
+  exemplo-fluxo-execucao-02:
+    runs-on: ubuntu-latest
+    needs: [exemplo-fluxo-execucao-01]
+    steps:
+      - name: Execução com sucesso
+        run: echo "Execução do fluxo"
