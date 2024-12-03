@@ -1,0 +1,12 @@
+name: Workflow concorrrencia
+run-name: Workflow Concorrencia ${{ github.run_number }}
+on:
+  workflow_dispatch:
+jobs:
+  exemplo-fluxo-execucao-01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execução do job teste
+        run: |
+          sleep 120;
+          echo "Action executada job 01"
