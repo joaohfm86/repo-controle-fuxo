@@ -2,7 +2,11 @@ name: Workflow concorrrencia
 run-name: Workflow Concorrencia ${{ github.run_number }}
 on:
   workflow_dispatch:
-concurrency: pipeline-aula
+    inputs:
+      chave:
+        type: string
+        default: pipeline-aula
+concurrency: 
 jobs:
   exemplo-fluxo-execucao-01:
     runs-on: ubuntu-latest
